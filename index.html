@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Typer — Privacy Policy</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27 fill=%27none%27%3E%3Crect width=%2740%27 height=%2740%27 rx=%2711.2%27 fill=%27%237138b6%27/%3E%3Cpath d=%27M2 2.5h6M5 2.5v7M8 9.5h2.5%27 transform=%27translate(2.8 2.8) scale(2.8667)%27 stroke=%27%23fcfbfe%27 stroke-width=%271.8%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&display=swap">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  /* Product palette: the app's dark theme (neutrals hue 300, accent oklch(78% 0.13 300)) — same as the welcome page. */
+  :root {
+    --bg: #141119;
+    --border: #36323e;
+    --text: #e9e6ee;
+    --body: #c5c2cd;
+    --faint: #827d8c;
+    --accent: #c4a4fe;
+  }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 17px/1.6 "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+    font-synthesis: none;
+  }
+  .shell { max-width: 680px; margin: 0 auto; padding: 56px 24px 96px; }
+  .brand { display: flex; align-items: center; gap: 13px; margin-bottom: 40px; }
+  .mark { display: flex; flex: 0 0 auto; }
+  .brand b { font-size: 15px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  h1 { font-size: 32px; letter-spacing: -0.02em; line-height: 1.15; }
+  .updated { margin-top: 8px; font-size: 14px; color: var(--faint); }
+  h2 { margin-top: 36px; font-size: 20px; letter-spacing: -0.01em; }
+  p, li { margin-top: 10px; color: var(--body); }
+  ul { margin-top: 10px; padding-left: 22px; }
+  strong { color: var(--text); }
+  code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .92em; overflow-wrap: anywhere; }
+  a { color: var(--accent); }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 14px; color: var(--faint); }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11.2" fill="#7138b6"/><path d="M2 2.5h6M5 2.5v7M8 9.5h2.5" transform="translate(2.8 2.8) scale(2.8667)" stroke="#fcfbfe" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      <b>AI Typer</b>
+    </div>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 5, 2026</p>
+
+    <p>AI Typer is a browser extension for Google Docs. It writes a draft from your request and
+       types it into your document key by key, at a human pace. This policy describes exactly
+       what it does with your data.</p>
+
+    <h2>The short version</h2>
+    <ul>
+      <li>There is no account, and there are no analytics or trackers inside the extension.</li>
+      <li>The extension cannot read the text of your documents, and nothing from a document is
+          sent anywhere.</li>
+      <li>One thing leaves your browser: the request you write when you ask AI for a draft.
+          Text you paste yourself is never sent.</li>
+    </ul>
+
+    <h2>What is sent, and when</h2>
+    <p>The extension talks to one server, the AI Typer server, and only in two cases:</p>
+    <ul>
+      <li><strong>When you press Write draft or Write again:</strong> the text of your request
+          (up to 1,000 characters), the length and tone you chose, a random install ID and the
+          version of the extension.</li>
+      <li><strong>When the panel checks how many AI drafts you have left today:</strong> the
+          install ID and the version of the extension.</li>
+    </ul>
+    <p>The install ID is a random identifier created on your device when the extension is
+       installed. It is not linked to your Google account, your name or your email address.
+       As with every request on the internet, the server also sees your IP address.</p>
+
+    <h2>What the server does with it</h2>
+    <ul>
+      <li>It passes the text of your request, with the length and tone, to the provider of the
+          AI model — Anthropic (the Claude API) — which writes the draft. The install ID and
+          your IP address are not passed to the provider.</li>
+      <li>It does not store the text of your request or the text of the draft, and does not
+          write them to its log.</li>
+      <li>To enforce the limit of 5 AI drafts a day, it counts drafts per install ID. To protect
+          the service from abuse, it also counts drafts per IP address; the address is kept
+          only as a salted hash, never as the address itself. These counters are deleted
+          automatically within three days.</li>
+      <li>For each draft request it writes one line to its log: the time, the response status,
+          the chosen length and tone, the number of tokens used and how long the request took.</li>
+      <li>The server runs on Cloudflare. As the hosting provider, Cloudflare processes every
+          request to the server, including your IP address.</li>
+    </ul>
+    <p>Nothing is sold, and nothing is used for advertising or for any purpose other than
+       writing your draft and enforcing the limits. The providers' own policies:
+       <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>,
+       <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>.</p>
+
+    <h2>What never leaves your browser</h2>
+    <ul>
+      <li>The text of your documents. The extension cannot read it.</li>
+      <li>The title and the address of a document. The extension uses them only on your
+          device: to tell a document from other pages and to show the name of the document in
+          its panel.</li>
+      <li>Text you paste yourself, and the changes you make to an AI draft.</li>
+      <li>Your typing settings and the progress of typing.</li>
+    </ul>
+
+    <h2>What stays in your browser</h2>
+    <ul>
+      <li>In the extension's storage (<code>chrome.storage.local</code>): your settings (typing
+          speed, rhythm, typos and your last choices of length, tone and text source), the
+          random install ID and the last known number of drafts left today.</li>
+      <li>In session memory (<code>chrome.storage.session</code>), cleared when you close the
+          browser: your request, the text to be typed, the name of the document it is typed
+          into, and the state of writing and typing.</li>
+    </ul>
+    <p>None of this is synced to other devices, and all of it is deleted when you remove the
+       extension.</p>
+
+    <h2>Permissions, explained</h2>
+    <ul>
+      <li><strong>sidePanel</strong> — the whole interface of the extension is the Chrome side
+          panel.</li>
+      <li><strong>storage</strong> — to keep the items listed above in your browser.</li>
+      <li><strong>scripting</strong> — to start working in documents that were already open when
+          the extension was installed or updated, without reloading the page.</li>
+      <li><strong>Access to <code>docs.google.com/document/*</code></strong> (Chrome shows it as
+          “Read and change your data on docs.google.com”) — to type into the document you have
+          open and to show a small status bar with Pause and Stop on its page. Chrome grants
+          this access for the whole docs.google.com site, so the extension can also see the
+          addresses and titles of your Google Sheets and Slides tabs. It does not run on those
+          pages; it only checks that they are not documents.</li>
+    </ul>
+
+    <h2>Pages the extension opens</h2>
+    <ul>
+      <li>After installation it opens a one-time <strong>welcome page</strong>, and after removal
+          your browser opens a <strong>feedback page</strong>. Both are ordinary web pages
+          hosted on GitHub Pages. They may use standard web analytics.</li>
+      <li>Like other websites, these pages and this policy are served by third parties: GitHub
+          Pages hosts them and Google Fonts provides the typeface. Both receive your IP address
+          and basic browser details when a page loads.</li>
+      <li>Feedback you choose to submit on the removal page (a reason and an optional comment)
+          is sent to the developer via Google Forms, and only when you press
+          <strong>Send feedback</strong>. It contains only what you pick and type; the page
+          attaches no identifiers.</li>
+    </ul>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the updated version will be published at this address with a new
+       date above.</p>
+
+    <h2>Contact</h2>
+    <p>Questions? <a href="https://github.com/anastasialekasova-hub/ai-typer-privacy/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.</p>
+
+    <footer>Google Docs is a trademark of Google LLC. AI Typer is an independent project and is not affiliated with, endorsed by or sponsored by Google LLC.</footer>
+  </div>
+</body>
+</html>
