@@ -45,7 +45,7 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: October 5, 2026</p>
+    <p class="updated">Last updated: October 6, 2026</p>
 
     <p>AI Typer is a browser extension for Google Docs. It writes a draft from your request and
        types it into your document key by key, at a human pace. This policy describes exactly
@@ -75,23 +75,28 @@
 
     <h2>What the server does with it</h2>
     <ul>
-      <li>It passes the text of your request, with the length and tone, to the provider of the
-          AI model — Anthropic (the Claude API) — which writes the draft. The install ID and
-          your IP address are not passed to the provider.</li>
+      <li>It passes the text of your request, with instructions for the chosen length and tone,
+          to the AI model service that writes the draft. The service runs the GLM language model
+          and is reached through an API gateway. The install ID and your IP address are not
+          passed to it.</li>
       <li>It does not store the text of your request or the text of the draft, and does not
           write them to its log.</li>
       <li>To enforce the limit of 5 AI drafts a day, it counts drafts per install ID. To protect
           the service from abuse, it also counts drafts per IP address; the address is kept
           only as a salted hash, never as the address itself. These counters are deleted
           automatically within three days.</li>
+      <li>To share the daily budget fairly between new and existing installs, it keeps two dates
+          for each install ID: the day of its first AI draft and the day of its latest one. They
+          are deleted automatically within 32 days of the latest draft.</li>
       <li>For each draft request it writes one line to its log: the time, the response status,
-          the chosen length and tone, the number of tokens used and how long the request took.</li>
+          the chosen length and tone, the number of tokens used, the number of attempts and how
+          long the request took. Once a day it may also log the total spend of the service for
+          that day, which contains no data about users.</li>
       <li>The server runs on Cloudflare. As the hosting provider, Cloudflare processes every
           request to the server, including your IP address.</li>
     </ul>
     <p>Nothing is sold, and nothing is used for advertising or for any purpose other than
-       writing your draft and enforcing the limits. The providers' own policies:
-       <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a>,
+       writing your draft and enforcing the limits. The hosting provider's own policy:
        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>.</p>
 
     <h2>What never leaves your browser</h2>
